@@ -5,7 +5,9 @@ Rails.application.routes.draw do
       mount_devise_token_auth_for 'Admin', at: 'admin_auth', controllers:{
           registrations: 'api/v1/admin_registrations'
       }
-      mount_devise_token_auth_for 'Manager', at: 'manager_auth'
+      mount_devise_token_auth_for 'Manager', at: 'manager_auth', controllers:{
+          registrations: 'api/v1/manager_registrations'
+      }
 
       as :admin do
         # Define routes for Admin within this block.
