@@ -1,0 +1,23 @@
+POST http://localhost:3000/api/v1/admin_auth
+Content-Type: application/json
+Accept: application/json
+
+{
+  "email": "manager@example.com",
+  "password": "manager123",
+  "password_confirmation": "manager123"
+}
+
+###
+
+
+POST http://localhost:3000/api/v1/manager_auth/sign_in
+Content-Type: application/json
+Accept: application/json
+
+{
+  "email": "manager@example.com",
+  "password": "manager123"
+}
+
+###
