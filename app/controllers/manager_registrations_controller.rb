@@ -1,0 +1,2 @@
+class ManagerRegistrationsController < ApplicationController
+end
