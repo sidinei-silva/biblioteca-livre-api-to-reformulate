@@ -1,2 +1,2 @@
-class ManagerRegistrationsController < ApplicationController
+class ManagerRegistrationsController < DeviseTokenAuth::RegistrationsController
 end
