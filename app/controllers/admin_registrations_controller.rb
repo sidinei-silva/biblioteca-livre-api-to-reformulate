@@ -1,3 +1,3 @@
-class AdminRegistrationsController < ApplicationController
+class AdminRegistrationsController < DeviseTokenAuth::RegistrationsController
   before_action :authenticate_admin!, only: [:create]
 end
