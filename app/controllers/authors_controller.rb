@@ -1,4 +1,6 @@
 class AuthorsController < ApplicationController
+  devise_token_auth_group :member, contains: [:manager, :admin]
+  before_action :authenticate_member!
   before_action :set_author, only: [:show, :update, :destroy]
 
   # GET /authors
