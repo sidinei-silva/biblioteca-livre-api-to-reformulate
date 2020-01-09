@@ -1,5 +1,8 @@
 class BooksController < ApplicationController
+  devise_token_auth_group :member, contains: [:manager, :admin]
+  before_action :authenticate_member!
   before_action :set_book, only: [:show, :update, :destroy]
+
 
   # GET /books
   def index
