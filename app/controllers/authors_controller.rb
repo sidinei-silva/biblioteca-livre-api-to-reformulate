@@ -1,6 +1,10 @@
 class AuthorsController < ApplicationController
-  devise_token_auth_group :member, contains: [:manager, :admin]
-  before_action :authenticate_member!
+  devise_token_auth_group :member_supers, contains: [:manager, :admin]
+  before_action :authenticate_member_supers!, except: [:index, :show]
+
+  devise_token_auth_group :member_general, contains: [:manager, :admin, :user]
+  before_action :authenticate_member_general!, only: [:index, :show]
+
   before_action :set_author, only: [:show, :update, :destroy]
 
   # GET /authors
