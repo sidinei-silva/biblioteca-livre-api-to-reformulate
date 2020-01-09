@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   mount_devise_token_auth_for 'Manager', at: 'manager_auth', controllers: {
       registrations: 'manager_registrations'
   }
+  mount_devise_token_auth_for 'User', at: 'user_auth'
 
 end
