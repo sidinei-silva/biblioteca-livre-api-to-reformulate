@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :books
   resources :authors
   mount_devise_token_auth_for 'Admin', at: 'admin_auth', controllers: {
       registrations: 'admin_registrations'
