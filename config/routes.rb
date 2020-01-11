@@ -1,3 +1,12 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :books
+  resources :authors
+  mount_devise_token_auth_for 'Admin', at: 'admin_auth', controllers: {
+      registrations: 'admin_registrations'
+  }
+  mount_devise_token_auth_for 'Manager', at: 'manager_auth', controllers: {
+      registrations: 'manager_registrations'
+  }
+  mount_devise_token_auth_for 'User', at: 'user_auth'
+
 end
